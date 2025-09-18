@@ -5,13 +5,13 @@ const products = [
     {name:"gucci belt",category:"apparel",price:499.99,inventory:3},
     {name:"banana",category:"groceries",price:2.99,inventory:6},
     {name:"Dog",category:"default",price:2200.00,inventory:7},
-    {name:"Vacuum Filter",category:"household",price:20.00,inventory:3},
+    {name:"Vacuum",category:"household",price:200.00,inventory:3},
 ];
 
 // for...of that cycles through products and applies dynamic discount
 
-for (const product of products){
-    let discount = 0;
+for (let product of products){
+let discount = 0;
 
     switch (product.category){
         case "electronics":
@@ -27,12 +27,33 @@ for (const product of products){
         default:
             discount = 0;
     }
+    let promoPrice = product.price * (1-discount);
 };
 
 // if...else if additional discounts
-let customerType
-//for... while checkout
 
-//for...in log
+let customerType = ["regular","student","senior"];
 
-//object.entries()
+let extraDiscount = 0;
+
+if(customerType = "student"){
+        extraDiscount = 0.05;};
+    else if (customerType = "senior"){
+        extraDiscount = 0.07;};
+    else {
+        extraDiscount = 0;}
+
+//for or while loops for checkout
+
+const customers = [
+    {type:"regular", cart:["Vacuum","Dog"]},
+    {type:"student", cart:["banana"]},
+    {type:"senior", cart:["gucci belt","headphones","Vacuum"]},
+];
+
+for(let i = 0; i < customers.length; i++){
+    let product = products[i];
+    let subtotal = 0;
+
+    for(let item of customer.cart)
+}
