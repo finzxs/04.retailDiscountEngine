@@ -43,17 +43,34 @@ if(customerType = "student"){
     else {
         extraDiscount = 0;}
 
-//for or while loops for checkout
 
+//customer database made
 const customers = [
     {type:"regular", cart:["Vacuum","Dog"]},
     {type:"student", cart:["banana"]},
     {type:"senior", cart:["gucci belt","headphones","Vacuum"]},
 ];
-
 for(let i = 0; i < customers.length; i++){
     let product = products[i];
     let subtotal = 0;
+// going through each item in customers car
+    for (let item of customers.cart){
+        let product = inventory.find(p => p.name === item);
+        
+        if (product.stock > 0) {
+//category discount
+            let discountedPrice = applyCatagoryDiscount(product);
+            subtotal += discountedPrice;
 
-    for(let item of customer.cart)
-}
+            //-1 inventory
+            product.stock--;
+        } else {
+            console.log($(item),"is currently out of stock")
+        }
+    }
+
+// Customer discount
+let finalTotal = applyCustomerDiscount(subtotal, + customer.type);
+console.log(customer[i], $(finalTotal));
+};
+
