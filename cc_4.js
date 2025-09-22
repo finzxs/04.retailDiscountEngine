@@ -74,3 +74,18 @@ let finalTotal = applyCustomerDiscount(subtotal, + customer.type);
 console.log(customer[i], $(finalTotal));
 };
 
+// for...in
+let firstProduct = products[0];
+for(let key in firstProduct){
+    console.log(key, firstProduct[key]);
+}
+
+// log all products after inv. update
+for(let p of products){
+    let entries = Object.entries(p);
+    for(let pair of entries) {
+        console.log(pair[0], pair[1]);
+    }
+}
+
+
